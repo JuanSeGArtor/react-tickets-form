@@ -1,8 +1,3 @@
-# React + Vite
+# Proyecto de Formulario de Creación de Tickets usando React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Este repositorio contiene un proyecto desarrollado en React que consiste en la creación de un formulario para la generación de tickets. El objetivo principal de este proyecto es permitir a los usuarios completar información relevante y crear tickets de manera sencilla y eficiente.
