@@ -1,9 +1,13 @@
-
+import AddTicket from '../components/AddTicket';
+import './formScreen.scss';
 
 export default function FormScreen() {
     return (
         <>
-        <h1>Form React</h1>
+        <section>
+            <AddTicket />
+
+        </section>
         </>
     )
 }
