@@ -19,9 +19,9 @@ export default function AddTicket({ handleAddTicket }) {
                 resolved
             });
             handleAddTicket(response.data);
-            setTitle('');
-            setPriority('');
-            setDescription('Descripción por defecto');
+            setTitle('Add the ticket title');
+            setPriority('1');
+            setDescription('Add the ticket description');
             setResolved(false);
         } catch (error) {
             console.error('Error al enviar el formulario:', error);
