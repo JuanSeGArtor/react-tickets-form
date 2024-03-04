@@ -1,7 +1,8 @@
+import PropTypes from 'prop-types';
 import { useState } from 'react';
 import '../styled-components/addTicket.scss';
 
-export default function AddTicket({ handleTicketSubmit }) {
+export default function AddTicket({ handleAddTicket }) {
     const [title, setTitle] = useState('Add the ticket title');
     const [priority, setPriority] = useState('');
     const [description, setDescription] = useState('Add the ticket description');
@@ -9,7 +10,7 @@ export default function AddTicket({ handleTicketSubmit }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        handleTicketSubmit({ title, priority, description, resolved });
+        handleAddTicket({ title, priority, description, resolved });
         setTitle('');
         setPriority('');
         setDescription('');
@@ -71,3 +72,7 @@ export default function AddTicket({ handleTicketSubmit }) {
         </div>
     )
 }
+
+AddTicket.propTypes = {
+    handleAddTicket: PropTypes.func.isRequired,
+};
