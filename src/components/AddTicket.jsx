@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
+import axios from 'axios';
 import '../styled-components/addTicket.scss';
 
 export default function AddTicket({ handleAddTicket }) {
@@ -8,13 +9,23 @@ export default function AddTicket({ handleAddTicket }) {
     const [description, setDescription] = useState('Add the ticket description');
     const [resolved, setResolved] = useState(false);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        handleAddTicket({ title, priority, description, resolved });
-        setTitle('');
-        setPriority('');
-        setDescription('');
-        setResolved(false);
+        try {
+            const response = await axios.post('http://localhost:3001/tickets', {
+                title,
+                priority,
+                description,
+                resolved
+            });
+            handleAddTicket(response.data);
+            setTitle('');
+            setPriority('');
+            setDescription('Descripción por defecto');
+            setResolved(false);
+        } catch (error) {
+            console.error('Error al enviar el formulario:', error);
+        }
     }
 
     return (
