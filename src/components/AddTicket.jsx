@@ -5,7 +5,7 @@ import '../styled-components/addTicket.scss';
 
 export default function AddTicket({ handleAddTicket }) {
     const [title, setTitle] = useState('Add the ticket title');
-    const [priority, setPriority] = useState('');
+    const [priority, setPriority] = useState('1');
     const [description, setDescription] = useState('Add the ticket description');
     const [resolved, setResolved] = useState(false);
 

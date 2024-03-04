@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import AddTicket from '../components/AddTicket';
 import './formScreen.scss';
+import TicketsList from '../components/TicketsList';
 
 export default function FormScreen() {
     const [tickets, setTickets] = useState([]);
@@ -13,7 +14,7 @@ export default function FormScreen() {
         <>
         <section>
             <AddTicket handleAddTicket={handleAddTicket}/>
-            
+            <TicketsList tickets={tickets}/>
         </section>
         </>
     )
