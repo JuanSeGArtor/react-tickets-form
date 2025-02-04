@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import '../styled-components/ticketCard.scss';
+import DeleteButton from './DeleteButton';
 
-
-export default function TicketCard({ ticket }) {
+export default function TicketCard({ ticket, onDelete }) {
     return (
         <div className='ticket-card' key={ticket.id}>
             <h3>{ticket.title}</h3>
@@ -12,12 +12,13 @@ export default function TicketCard({ ticket }) {
                 <div className="priority">
                     P{ticket.priority}
                 </div>
-                <button>Delete</button>
+                <DeleteButton ticketId={ticket.id} onDelete={onDelete} />
             </div>
         </div>
-    )
+    );
 }
 
 TicketCard.propTypes = {
     ticket: PropTypes.object.isRequired,
-}
+    onDelete: PropTypes.func.isRequired,
+};

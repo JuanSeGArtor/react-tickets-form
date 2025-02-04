@@ -4,7 +4,7 @@ import axios from 'axios';
 import '../styled-components/addTicket.scss';
 
 export default function AddTicket({ handleAddTicket }) {
-    const [title, setTitle] = useState('Add the ticket title');
+    const [title, setTitle] = useState('Add ticket title');
     const [priority, setPriority] = useState('1');
     const [description, setDescription] = useState('Add the ticket description');
     const [resolved, setResolved] = useState(false);
@@ -19,7 +19,7 @@ export default function AddTicket({ handleAddTicket }) {
                 resolved
             });
             handleAddTicket(response.data);
-            setTitle('Add the ticket title');
+            setTitle('Add ticket title');
             setPriority('1');
             setDescription('Add the ticket description');
             setResolved(false);
